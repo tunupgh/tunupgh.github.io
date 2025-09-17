@@ -1,102 +1,122 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code when working with code in this repository.
 
 ## Project Overview
 
-This is the **NEW Jekyll migration** of the TunnelsUP blog. The original Octopress site is located at `../tunnelsup.github.io/` and serves as the source for content, theme, and functionality migration.
+This is **TunnelsUP**, a technical knowledge base website focused on network security, firewalls, and Cisco configurations. The site is built with Jekyll and contains 200+ technical articles spanning from 2010-2018.
 
-**Migration Status**: 🚧 **In Progress**
-- ✅ Basic Jekyll site structure created
-- ✅ URL preservation configured (`permalink: /:title/`)
-- ✅ Site metadata configured (title, description, URLs)
-- 🔄 **Currently migrating**: Content and theme from Octopress
-- ⏳ **Pending**: Custom tools, tag system, final styling
+## Site Architecture
+
+### Technology Stack
+- **Framework**: Jekyll 3.10.0
+- **Theme**: Minima 2.0
+- **Markdown**: Kramdown with GFM parser
+- **Plugins**: jekyll-feed, jekyll-paginate
+
+### Site Structure
+- **Posts**: 200+ technical articles in `_posts/` (2010-2018)
+- **Tools**: Interactive network security tools in `/tools/` directory
+- **Content Types**: Cisco configs, VPN tutorials, security guides, Linux commands
+- **URL Format**: `/:title/` (clean URLs without dates)
+- **Pagination**: `/tup/page/:num/` (10 posts per page)
 
 ## Development Commands
 
-### Basic Jekyll Operations
+### Local Development
 ```bash
-bundle exec jekyll serve          # Start development server (localhost:4000)
-bundle exec jekyll build          # Build static site to _site/
-bundle exec jekyll serve --trace  # Run with detailed error output
+bundle exec jekyll serve              # Start dev server (localhost:4000)
+bundle exec jekyll serve --trace      # Debug mode with detailed errors
+bundle exec jekyll build              # Build site to _site/
 ```
 
 ### Content Management
-```bash
-bundle exec jekyll new-post "Title"  # Create new post (if jekyll-compose added)
+- Posts are in markdown format with YAML frontmatter
+- Images stored in `/images/` directory
+- Tools are standalone HTML/JS pages in `/tools/` subdirectories
+
+## Content Focus Areas
+
+The site specializes in:
+- **Cisco ASA/PIX**: Firewall configurations, troubleshooting, VPN setup
+- **Network Security**: VPN tunnels, NAT, routing, packet analysis
+- **Security Tools**: Custom calculators and analyzers for network admins
+- **Linux/CLI**: Command line guides and system administration
+- **Professional Tutorials**: Step-by-step technical guides
+
+## Key Features
+
+### Interactive Tools
+Located in `/tools/` with individual subdirectories:
+- **Hash Analyzer**: Identify hash types
+- **Subnet Calculator**: IPv4/IPv6 network calculations
+- **Config Cleanup**: Cisco ASA configuration analysis
+- **Show Connections Analyzer**: ASA connection parsing
+- **NAT Tools**: Configuration converters and generators
+
+### Content Organization
+- **Technical Posts**: Deep-dive tutorials and configurations
+- **Cheat Sheets**: Quick reference guides
+- **Troubleshooting**: Problem/solution focused articles
+- **Videos**: External video content references
+
+## Site Configuration
+
+### Important Settings
+- **Base URL**: https://www.tunnelsup.com
+- **Permalink**: `/:title/` (preserves clean URLs)
+- **Pagination**: 10 posts per page at `/tup/page/:num/`
+- **Feed**: Atom feed via jekyll-feed plugin
+
+### File Structure
+```
+/
+├── _posts/           # 200+ markdown articles (2010-2018)
+├── _layouts/         # Jekyll page templates
+├── _includes/        # Partial templates
+├── _sass/           # Sass stylesheets
+├── tools/           # Interactive JavaScript tools
+├── images/          # Site images and diagrams
+├── assets/          # CSS, JS, and other assets
+└── _config.yml      # Jekyll configuration
 ```
 
-## Architecture
+## Development Guidelines
 
-### Current Structure
-- **Standard Jekyll 3.10.0** with minima theme
-- **Plugins**: jekyll-feed, jekyll-paginate
-- **Markdown**: kramdown
-- **URL Structure**: `/:title/` (preserves Octopress URLs)
-- **Pagination**: `/tup/page/:num/` (matches original)
+### Code Style
+- Follow existing Jekyll/Liquid templating patterns
+- Maintain clean, semantic HTML structure
+- Use existing CSS classes and styling patterns
+- Keep JavaScript tools simple and functional
 
-### Migration Sources
-- **Original Octopress**: `../tunnelsup.github.io/`
-- **Content Source**: `../tunnelsup.github.io/source/_posts/` (200+ technical posts)
-- **Theme Source**: `../tunnelsup.github.io/sass/` and `../tunnelsup.github.io/source/_includes/`
-- **Custom Tools**: Various JavaScript utilities to migrate
+### Content Guidelines
+- Technical accuracy is paramount
+- Include practical examples and configurations
+- Focus on real-world networking scenarios
+- Maintain professional, instructional tone
 
-## Migration Plan
+### Tool Development
+- Tools should be self-contained in their directories
+- Use vanilla JavaScript when possible
+- Include clear instructions and examples
+- Test with realistic network data
 
-### Phase 1: ✅ Foundation (Complete)
-- Jekyll site creation
-- Basic configuration
-- URL preservation setup
+## Common Tasks
 
-### Phase 2: 🔄 Content & Theme (In Progress)
-- Content migration from `../tunnelsup.github.io/source/_posts/`
-- Theme extraction from Octopress Sass files
-- Custom sidebar/layout migration
+### Adding New Posts
+1. Create file in `_posts/` with format: `YYYY-MM-DD-title.markdown`
+2. Include proper YAML frontmatter (title, date, layout)
+3. Use markdown for content formatting
+4. Test locally before committing
 
-### Phase 3: ⏳ Advanced Features (Pending)
-- Custom JavaScript tools (hash analyzer, subnet calculator, config cleanup)
-- Tag/category system (recreate custom tag generator functionality)
-- Custom includes and partials
+### Updating Tools
+1. Navigate to specific tool directory in `/tools/`
+2. Modify HTML/CSS/JS files as needed
+3. Test functionality thoroughly
+4. Ensure responsive design works
 
-### Phase 4: ⏳ Polish (Pending)
-- Performance optimization
-- Final URL testing and validation
-- Deployment setup
-
-## Key Differences from Original
-
-**Simplified Architecture:**
-- Uses standard Jekyll instead of heavy Octopress framework
-- Modern Ruby/Jekyll versions vs legacy dependencies
-- Standard plugin ecosystem vs custom Octopress plugins
-
-**Preserved Elements:**
-- Same URL structure (`/:title/`)
-- Same pagination paths (`/tup/page/:num/`)
-- Same site metadata and branding
-- Content and theme styling (when migrated)
-
-**Technical Focus:**
-- Network security and Cisco configuration content
-- Professional technical knowledge base
-- Custom networking tools integration
-
-## Development Notes
-
-### Content Migration Process
-1. Copy posts from `../tunnelsup.github.io/source/_posts/`
-2. Update frontmatter format for Jekyll
-3. Test URL preservation with sample posts
-4. Batch migrate remaining content
-
-### Theme Migration Process
-1. Extract Sass from `../tunnelsup.github.io/sass/`
-2. Convert Octopress includes to Jekyll layouts
-3. Migrate custom sidebar system
-4. Preserve professional styling
-
-### Tools Migration Process
-1. Extract JavaScript from `../tunnelsup.github.io/source/javascripts/`
-2. Migrate custom tools to new site structure
-3. Update any hardcoded paths or dependencies
+### Site Maintenance
+- Check for broken links periodically
+- Update dependencies in Gemfile as needed
+- Monitor site performance and load times
+- Validate HTML and CSS periodically

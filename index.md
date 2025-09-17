@@ -52,7 +52,7 @@ description: Tools, calculator, and helpful information for network engineering,
   </div>
 
   <div class="featured-articles">
-    <h2>Featured Articles</h2>
+    <h2>Popular Articles</h2>
     <ul>
       {% assign featured_posts = site.posts | where_exp: "post", "post.categories contains 'featured'" %}
       {% for post in featured_posts limit: 10 %}
