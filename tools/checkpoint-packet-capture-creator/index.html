@@ -1,0 +1,93 @@
+---
+layout: page
+title: Checkpoint Packet Capture Creator
+permalink: /checkpoint-packet-capture-creator/
+description: Generate Checkpoint firewall packet capture commands for network troubleshooting.
+---
+
+<div class="tool-page">
+  <div class="tool-header">
+    <p class="tool-description">The CLI of Checkpoint allows users to create packet captures. This webpage will help create the config needed to be used for Checkpoint packet captures. The user must be in expert mode in order to conduct the packet capture from the command line.</p>
+  </div>
+
+  <div class="tool-form">
+    <h3>Inputs</h3>
+    <form name="creator" id="form">
+      <div class="error-message errorMessage"></div>
+
+      <label for="srcip">Source IP: (example: 192.168.1.1, any)</label>
+      <input type="text" id="srcip" value="any" name="srcip">
+
+      <label for="dstip">Destination IP:</label>
+      <input type="text" id="dstip" value="any" name="dstip">
+
+      <label for="dstport">Destination port: (example: 80, any)</label>
+      <input type="text" id="dstport" value="any" name="dstport">
+
+      <label for="file">Dump to filename. Leave blank to output results to screen. (example: capture.pcap)</label>
+      <input type="text" id="file" name="file">
+
+      <button id="create" class="form-button" type="button">Create</button>
+    </form>
+  </div>
+
+  <div class="tool-results">
+    <h3>Config</h3>
+    <div id="resultsblock">
+      <pre><code id="results">fw monitor</code></pre>
+    </div>
+  </div>
+
+  <div class="tool-examples">
+    <h3>Understanding the Output</h3>
+    <p>
+      Suppose there is a capture to see all packets going to or coming from 99.99.99.99. The capture statement would look like this:
+    </p>
+    <code>fw monitor -e 'accept (([16:4,b]=99.99.99.99) or ([12:4,b]=99.99.99.99));'</code>
+
+    <p>Then we have an inside host attempt to go to that IP over port 80. We will see the following output:</p>
+
+    <pre><code>[fw_1] Lan1:i[64]: 10.22.22.22 -> 99.99.99.99 (TCP) len=64 id=641
+TCP: 35592 -> 80 .S.... seq=a830ff8b ack=00000000
+[fw_1] Lan1:I[64]: 10.22.22.22 -> 99.99.99.99 (TCP) len=64 id=641
+TCP: 35592 -> 80 .S.... seq=a830ff8b ack=00000000
+[fw_1] Lan8:o[64]: 10.22.22.22 -> 99.99.99.99 (TCP) len=64 id=641
+TCP: 35592 -> 80 .S.... seq=a830ff8b ack=00000000
+[fw_1] Lan8:O[64]: 44.44.44.44 -> 99.99.99.99 (TCP) len=64 id=641
+TCP: 27026 -> 80 .S.... seq=a830ff8b ack=00000000</code></pre>
+
+    <p>The above is only the SYN packet going out to the destination host. Dissecting the results we can understand more:</p>
+
+    <ul>
+      <li><code>Lan1</code> means the packet is being processed on the Lan1 interface</li>
+      <li><code>Lan1:i</code> indicates this packet is captured <strong>pre-inbound</strong> rules</li>
+      <li><code>Lan1:I</code> indicates this packet is captured <strong>post-Inbound</strong> rules</li>
+      <li><code>Lan8</code> indicates the interface the packet will be routed out of</li>
+      <li><code>Lan8:o</code> indicates the packet was captured <strong>pre-outbound</strong> rules</li>
+      <li><code>Lan8:O</code> indicates the packet was captured <strong>post-Outbound</strong> rules. You can see the source IP has changed due to NAT during the outbound rules.</li>
+      <li><code>TCP: 35592 -> 80</code> indicates this packet is a TCP packet with a source port of 35592 and destination port of 80</li>
+      <li><code>.S....</code> indicates this packet has the SYN flag set</li>
+    </ul>
+
+    <p>Now let's look at the return packet, the SYN-ACK packet and how it looks coming back through the firewall:</p>
+
+    <pre><code>[fw_1] Lan8:i[44]: 99.99.99.99 -> 44.44.44.44 (TCP) len=44 id=45516
+TCP: 80 -> 27026 .S..A. seq=b0e2ca42 ack=a830ff8c
+[fw_1] Lan8:I[44]: 99.99.99.99 -> 10.22.22.22 (TCP) len=44 id=45516
+TCP: 80 -> 35592 .S..A. seq=b0e2ca42 ack=a830ff8c
+[fw_1] Lan1:o[44]: 99.99.99.99 -> 10.22.22.22 (TCP) len=44 id=45516
+TCP: 80 -> 35592 .S..A. seq=b0e2ca42 ack=a830ff8c
+[fw_1] Lan1:O[44]: 99.99.99.99 -> 10.22.22.22 (TCP) len=44 id=45516
+TCP: 80 -> 35592 .S..A. seq=b0e2ca42 ack=a830ff8c</code></pre>
+
+    <ul>
+      <li><code>.S..A.</code> indicates this packet has the SYN ACK flags set.</li>
+    </ul>
+
+    <p><strong>Take note:</strong><br>
+    <strong>A denied packet due a policy will be denied in the inbound rules.<br>
+    A NAT will take place in the outbound rules.</strong></p>
+  </div>
+</div>
+
+<script src="/assets/js/checkpointpacketcapture.js"></script>

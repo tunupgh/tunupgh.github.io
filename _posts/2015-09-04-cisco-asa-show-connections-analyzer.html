@@ -1,0 +1,72 @@
+---
+layout: post
+title: "Cisco ASA show connections analyzer"
+date: 2015-09-04 11:37
+custom_js:
+- showconn
+comments: true
+categories:
+- tools
+- cisco
+- asa 
+---
+This tool will examine the output of <code>show conn</code> from a Cisco ASA firewall and display relevant information about the connections.
+<br><br>
+<div class="alert alert-info">
+	<strong>Special note:</strong> This tool does not send any data entered to the server. The analysis is done client side. This means none of the data entered will be sent over the internet.
+</div>
+Paste the entire contents of <code>show conn</code> from a Cisco ASA below.
+    <form name="conns" method="get">
+
+    <textarea rows="10" name="showconninput" id="showconninput" class="input-block-level">
+    </textarea>
+    <br />
+    <button id="analyze" type="button" class="button btn-success">Analyze!</button>
+    <button id="demo" type="button" class="button">Load sample data</button>
+    </form>
+
+
+<div id="results">
+    <hr>
+
+    <h2> Results </h2>
+
+    <table class="table table-bordered">
+    	<tr>
+    		<td><h3 id='totalconns'>0</h3><br>Total Conns</td>
+    		<td><h3 id='tcpconns'>0</h3><br>TCP Conns</td>
+    		<td><h3 id='udpconns'>0</h3><br>UDP Conns</td>
+    	</tr>    	
+    	<tr>
+    		<td><h3 id='icmpconns'>0</h3><br>ICMP Conns</td>
+    		<td><h3 id='greconns'>0</h3><br>GRE Conns</td>
+    		<td><h3 id='espconns'>0</h3><br>ESP Conns</td>
+    	</tr>
+    </table>
+
+    <small><div id="topTalkers"></div></small>
+
+    <br>
+	<div class="row-fluid">
+		<div class="span6">
+		    <div id="topInboundPorts"></div>
+		</div>
+		<div class="span6">
+		    <div id="topOutboundPorts"></div>
+		</div>
+	</div>
+    <div id="topInboundHalfs"></div>
+    <br>
+	<div class="row-fluid">
+		<div class="span6">
+		    <div id="topUDPsrcPorts"></div>
+		</div>
+		<div class="span6">
+		    <div id="topUDPdstPorts"></div>
+		</div>
+	</div>
+    <br>
+    <div id="connTypes"></div>
+
+
+

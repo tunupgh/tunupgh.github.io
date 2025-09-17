@@ -1,0 +1,24 @@
+---
+layout: post
+title: 192.168.1.1 Set up your home network
+date: 2015-01-16 19:12
+comments: true
+keywords: 192.168.1.1, 192.168.l.l, 192.168.1.l, home network, setup, admin
+categories:
+---
+You are probably here because you're trying to setup your home network. In order to access your home router you should go to the following link:
+
+###http://192.168.1.1
+
+By default, the credentials may be one of the following:
+
+* Username: `admin`  Password: `admin`
+* Username: `admin`  Password: `[blank]`
+* Username: `administrator`  Password: `admin`
+
+
+## Additional Information
+
+The numbers `192.168.1.1` are an IP address. Each computer that is on a network has an IP address which indicates where that computer lives. The IP `192.168.1.1` is a private IP address. This means anyone can use it in their home or office network to route packets internally but it cannot be used on the public internet. This IP address is often the default IP address of many home networking devices such as Linksys, Cisco, Belkin, and D-Link routers. These routers sometimes have WiFi capabilities. These devices act as a gateway between the home network and the public internet. This is why they can have a private IP on the inside of the network that all the devices inside the network can go to in order to get out to the internet.
+
+

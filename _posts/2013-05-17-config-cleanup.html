@@ -1,0 +1,49 @@
+---
+layout: post
+title: "Cisco ASA Configuration Cleanup Tool"
+custom_js:
+- configcleanup
+alias: /tup/2013/05/17/config-cleanup/
+comments: true
+categories:
+- tools
+- cisco
+---
+   <p>The goal of this tool will be to examine the config of a Cisco ASA and suggest a config that can be used to clean up the config. It will do the following actions after looking at the “show running-config”:</p>
+
+   <ul>
+    <li>Determine if there are any unused ACL’s. Any that aren’t being used will be subject for removal.</li>
+    <li>Determine if there are any unused objects and object-groups. Any that aren’t being used will be subject for removal.</li>
+</ul>
+<p>Special Notes:</p>
+    <ul>
+    <li>This script is 100% client side. Meaning nothing you enter will be uploaded to this website.</li>
+    <li>This is an experimental tool. Backup your config before making any changes suggested by this tool.</li>
+</ul>
+        <br /><br />
+    <p>Paste the output of "show run" in the box below.</p>
+
+        <form name="convert" method="get">
+
+        <textarea rows="10" name="showrun" class="input-block-level">
+        </textarea>
+        <br />
+        <button id="cleanit" type="button">Clean it up!</button>
+        </form>
+
+
+
+   <div id="results">
+        <hr>
+
+        <h2> Results </h2>
+
+                <blockquote>
+        <div id="outputdata">
+
+        </div>
+        </blockquote>
+
+
+
+   </div><!-- /results -->

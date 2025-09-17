@@ -1,0 +1,79 @@
+---
+layout: page
+title: Show Connections Analyzer
+permalink: /show-connections-analyzer/
+description: Analyze Cisco ASA show connections output to identify top talkers and connection patterns.
+---
+
+<div class="tool-page">
+  <div class="tool-header">
+    <p class="tool-description">This tool will examine the output of <code>show conn</code> from a Cisco ASA firewall and display relevant information about the connections.</p>
+    <div class="alert alert-info">
+      <strong>Special note:</strong> This tool does not send any data entered to the server. The analysis is done client side. This means none of the data entered will be sent over the internet.
+    </div>
+  </div>
+
+  <div class="tool-form">
+    <form name="conns" method="get">
+      <label for="showconninput">Paste the entire contents of <code>show conn</code> from a Cisco ASA below:</label>
+      <textarea rows="10" name="showconninput" id="showconninput" placeholder="Paste show conn output here..."></textarea>
+      <button id="analyze" type="button" class="form-button">Analyze!</button>
+      <button id="demo" type="button" class="form-button secondary">Load sample data</button>
+    </form>
+  </div>
+
+  <div class="tool-results" id="results">
+    <hr>
+    <h2>Results</h2>
+
+    <table class="table table-bordered">
+      <tr>
+        <td><h3 id='totalconns'>0</h3><br>Total Conns</td>
+        <td><h3 id='tcpconns'>0</h3><br>TCP Conns</td>
+        <td><h3 id='udpconns'>0</h3><br>UDP Conns</td>
+      </tr>
+      <tr>
+        <td><h3 id='icmpconns'>0</h3><br>ICMP Conns</td>
+        <td><h3 id='greconns'>0</h3><br>GRE Conns</td>
+        <td><h3 id='espconns'>0</h3><br>ESP Conns</td>
+      </tr>
+    </table>
+
+    <div id="topTalkers"></div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div id="topInboundPorts"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="topOutboundPorts"></div>
+      </div>
+    </div>
+
+    <div id="topInboundHalfs"></div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div id="topUDPsrcPorts"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="topUDPdstPorts"></div>
+      </div>
+    </div>
+
+    <div id="connTypes"></div>
+  </div>
+
+  <div class="tool-examples">
+    <h3>About this Tool</h3>
+    <p>
+      This tool analyzes the output from the Cisco ASA <code>show conn</code> command to provide insights into network traffic patterns.
+      It identifies top talkers, most active ports, connection types, and other useful statistics for network troubleshooting and analysis.
+    </p>
+    <p>
+      Simply paste the output from your ASA's <code>show conn</code> command into the text area above and click "Analyze!" to see the results.
+    </p>
+  </div>
+</div>
+
+<script src="/assets/js/showconn.js"></script>

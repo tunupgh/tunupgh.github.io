@@ -1,0 +1,17 @@
+---
+layout: null
+---
+User-agent: *
+Disallow: /kb.html
+Disallow: /search/
+Disallow: /tup/
+Disallow: /blog/
+Disallow: /404.html
+Disallow: /images/XBee-Quick-Reference-Guide.pdf
+Disallow: /images/ASALicensingCheatSheet.pdf
+Disallow: /images/Metasploit-CheatSheet.pdf
+Disallow: /images/YAESUFT60-CheatSheet.pdf
+User-agent: HypeStat
+Disallow: /
+
+Sitemap: {{ site.url }}/sitemap.xml

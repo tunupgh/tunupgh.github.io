@@ -1,0 +1,64 @@
+---
+layout: page
+title: Cisco ASA Config Cleanup Tool
+permalink: /config-cleanup/
+description: Cisco ASA configuration cleanup tool. Analyze configs to find unused ACLs and objects that can be removed.
+---
+
+<div class="tool-page">
+  <div class="tool-header">
+    <p class="tool-description">The goal of this tool will be to examine the config of a Cisco ASA and suggest methods to clean up the config.</p>
+  </div>
+
+  <div class="tool-form">
+    <p>It will do the following actions after looking at the "show running-config":</p>
+    <ul>
+      <li>Determine if any ACL's can be combined by using object-groups</li>
+      <li>Determine if there are any unused ACL's. Any that aren't being used will be subject for removal.</li>
+      <li>Determine if there are any unused objects and object-groups. Any that aren't being used will be subject for removal.</li>
+    </ul>
+
+    <p>Paste the output of "show run" in the box below.</p>
+
+    <form name="convert" method="get">
+      <textarea rows="10" name="showrun" cols="80" id="config-input" placeholder="Paste your Cisco ASA configuration here..."></textarea>
+      <br>
+      <button id="cleanit" class="form-button" type="button">Clean it up!</button>
+    </form>
+  </div>
+
+  <div class="tool-results" id="results" style="display: none;">
+    <div class="results-container">
+      <h4>Results</h4>
+      <div id="outputdata">
+        <!-- Results will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <h3>About this Tool</h3>
+  <p>
+    This tool analyzes Cisco ASA configurations to identify:
+  </p>
+  <ul>
+    <li><strong>Unused Access Control Lists (ACLs)</strong> - ACLs that are defined but not referenced in any access-group command</li>
+    <li><strong>Unused Objects and Object-groups</strong> - Network/service objects that are defined but not used in any ACL or NAT rule</li>
+    <li><strong>Optimization Opportunities</strong> - Places where multiple ACL entries could be combined using object-groups</li>
+  </ul>
+
+  <p>
+    Simply paste the output of <code>show running-config</code> from your Cisco ASA and click "Clean it up!" to get recommendations for cleaning up your configuration.
+  </p>
+
+  <div class="tool-examples">
+    <h3>Example Usage</h3>
+    <p>Copy and paste output from commands like:</p>
+    <ul>
+      <li><code>show running-config</code></li>
+      <li><code>show running-config access-list</code></li>
+      <li><code>show running-config object</code></li>
+    </ul>
+  </div>
+</div>
+
+<script src="/assets/js/configcleanup.js"></script>

@@ -1,0 +1,74 @@
+---
+layout: page
+title: Cisco ASA NAT Conversion Tool
+permalink: /nat-converter/
+description: Convert Cisco ASA 8.2 and under NAT statements to the new ASA 8.3+ format.
+---
+
+<div class="tool-page">
+  <div class="tool-header">
+    <p class="tool-description">Do you need to convert ASA 8.2 and under code to the new ASA 8.3+ code? The NAT statements are entirely different in the new code. During the upgrade the ASA will try to convert it automatically but this is worthless because it does a horrible job at it. Cisco recommends using auto NAT. This is also bad advice to use Auto NAT because it makes extremely ugly and hard to manage code. This conversion tool will convert your NAT statements to the easiest to read and manage code.</p>
+
+    <div class="alert alert-info">
+      <strong>Privacy Note:</strong> None of the data entered into the text area is uploaded to a server. All of the work of this tool is done on the client side. This means it's safe to enter sensitive data without worrying about it traveling over the internet. You can even connect to this webpage, disconnect from internet and still use the conversion tool without any difference in functionality.
+    </div>
+  </div>
+
+  <div class="tool-form">
+    <h3>Preparing your code</h3>
+    <p>Gather the output from the following commands in your old ASA code:</p>
+    <pre><code>show run global
+show run nat
+show run static</code></pre>
+
+    <p>If there are any related ACLs in the NAT statements get that configuration also by doing:</p>
+    <pre><code>show run access-list | include [ACL-NAME]</code></pre>
+    <p>Paste the output from the commands above into the text area and click convert. You should examine the results to verify the config is accurate.</p>
+
+    <form name="convert" method="get">
+      <label for="nat82">Input ASA 8.2 NAT statements:</label>
+      <textarea id="nat82" name="nat82" rows="10" placeholder="static (INSIDE,OUTSIDE) 55.55.55.2 192.168.1.2 netmask 255.255.255.255">static (INSIDE,OUTSIDE) 55.55.55.2 192.168.1.2 netmask 255.255.255.255
+static (INSIDE,OUTSIDE) 55.55.55.3 192.168.1.3 netmask 255.255.255.255
+static (INSIDE,DMZ) 10.10.10.0 172.16.10.0 netmask 255.255.255.0</textarea>
+
+      <button id="convertit" class="form-button" type="button">Convert It!</button>
+
+      <div class="tool-results">
+        <h4>Results</h4>
+        <textarea id="nat84" name="nat84" rows="20" readonly></textarea>
+      </div>
+    </form>
+  </div>
+
+  <div class="tool-results-spacer">
+  </div>
+
+  <div class="tool-examples">
+    <h3>Examples</h3>
+
+    <h4>Static NAT Examples:</h4>
+    <pre><code>static (INSIDE,OUTSIDE) 55.55.55.2 192.168.1.2 netmask 255.255.255.255
+static (DMZ,OUTSIDE) tcp interface 8080 172.16.0.10 www netmask 255.255.255.255
+static (INSIDE,DMZ) 10.10.10.0 172.16.10.0 netmask 255.255.255.0 dns
+static (INSIDE,DMZ) 192.168.100.49 172.24.2.49 netmask 255.255.255.255 tcp 255 2000
+static (INSIDE,EXT) 172.16.25.25 access-list ACL-NAT2
+access-list ACL-NAT2 extended permit ip 192.168.29.0 255.255.255.0 host 10.1.25.205</code></pre>
+
+    <h4>Global+NAT Example:</h4>
+    <pre><code>nat (INSIDE) 1 10.0.0.0 255.255.255.0
+global (OUTSIDE) 1 interface
+nat (INSIDE) 2 access-list ACL-NAT3
+global (OUTSIDE) 2 22.22.22.128 netmask 255.255.255.128
+access-list ACL-NAT3 standard permit host 33.33.33.33</code></pre>
+
+    <h4>NAT Zero+ACL Example:</h4>
+    <pre><code>nat (INSIDE) 0 access-list ACL-NONAT
+access-list ACL-NONAT extended permit ip 192.168.5.0 255.255.255.0 host 172.16.200.205
+access-list ACL-NONAT extended permit ip any host 172.16.200.203</code></pre>
+
+    <h3>Next Steps</h3>
+    <p>Did you use the tool and was it helpful at all? Did it save you any time at all? Please either donate to the site to show your thanks or comment below to tell me how it worked or what to improve upon. Thanks!</p>
+  </div>
+</div>
+
+<script src="/assets/js/natconverter.js"></script>

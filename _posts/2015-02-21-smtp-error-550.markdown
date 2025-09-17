@@ -1,0 +1,88 @@
+---
+layout: post
+title: SMTP error 550
+date: 2015-02-21 12:53
+comments: true
+categories:
+- smtp
+- postfix
+- misc
+---
+When email is rejected due to SMTP error 550 (also known as SMTP error 5.5.0), this usually means the message could not be delivered because the mailbox is unavailable. This is almost always a problem with the receiving mail server and never a problem with the sending client.
+
+See this page for a full list of [SMTP error codes](/smtp-error-codes/).
+
+## The usual suspects
+
+SMTP error 550 is usually caused by one of the following:
+
+* Recipient's email address has a typo
+* No such recipient address exists on the receiving server
+* Anti-spam filtering on receiving server has blocked the message
+* Outbound mail filtering on the sending server has blocked the message
+* Message rejected by sending SMTP server due to SMTP authentication failure
+* Receiving mail server is down
+* Recipient's mailbox is suspended, disabled, inactive, or closed
+* Recipient's mail server does not have MX records configured correctly
+
+
+Here are a few troubleshooting steps to resolve SMTP error 550.
+
+### Check that recipient address is valid
+
+Sometimes the 550 error simply means the recipient address is not found or not valid. In this case check that the user does exist and that there isn't a typo in the address.
+
+
+If running postfix you can see this in /var/log/mail.log:
+
+```
+postfix/smtpd[28384]: NOQUEUE: reject: RCPT from mail-ie0-f171.google.com[209.85.223.171]: 550 5.1.1 <nosuchuser@example.com>: Recipient address rejected: User unknown in virtual mailbox table; from=<someuser@gmail.com> to=<nosuchuser@example.com> proto=ESMTP helo=<mail-ie0-f171.google.com>
+```
+
+In fact the user gets a reply email often from the server with the reason explained further also.
+
+Postfix response to sender:
+
+```
+550 5.1.1 <nosuchuser@example.com>: Recipient address rejected: User unknown in virtual mailbox table
+```
+
+GMail response to sender:
+
+```
+The error that the other server returned was:
+550-5.1.1 The email account that you tried to reach does not exist. Please try
+550-5.1.1 double-checking the recipient's email address for typos or
+550-5.1.1 unnecessary spaces.
+```
+
+
+### Check that there aren't any anti-spam filters blocking
+
+Mail servers can sometimes reject a message with error 550 due to an anti-spam filter blocking the message. The mail server admin may be able to add the address to a whitlelist in order to allow the message through if it is being blocked by an anti-spam filter.
+
+Reject messages may look like this:
+
+```
+22.222.22.222 does not like recipient.
+```
+
+```
+550-Previous (cached) callout verification failure
+```
+
+```
+550 Sender verify failed
+```
+
+```
+Remote host said: 550-Verification failed for someuser@example.com
+```
+
+### Check outbound mail rules aren't blocking 
+
+Some organizations have outbound mail rules set up. This is where mail is inspected before leaving the sender's network. A device like Cisco Ironport or MessageLabs can do outbound inspection. This is set up to prevent specific data leaving the network (like social security numbers), stop outbound spam, and other potentially bad situations. SMTP error 550 may generate from one of these systems that is inspecting outbound mail.
+
+```
+Response: 550 Cyberoam Anti Spam Engine has identified
+```

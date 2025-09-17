@@ -1,0 +1,82 @@
+# Redirect mappings from original Octopress URLs
+# Format: original_path -> post_title
+/tup/2010/05/01/debug-messages-from-successful-l2l-tunnel/ -> Debug messages from successful L2L tunnel ASA
+/tup/2010/05/02/configuring-netflow-with-cisco-asas/ -> Configuring Netflow on ASA's
+/tag/mm_wait_msg4/ -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tag/mm_wait_msg1/ -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tag/mm_wait_msg2/ -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tag/mm_wait_msg3/ -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tag/mm_wait_msg5/ -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tag/mm_wait_msg6 -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tup/2010/05/02/isakmp-ike-phase-1-status-messages/ -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+isakmp-ike-phase-2-status-messages -> ISAKMP (IKE Phase 1) status messages MM_WAIT_MSG#
+/tup/2010/05/02/remote-access-vpn-connection-using-a-cisco-router/ -> Remote access VPN connection using Cisco Router
+/tup/2010/05/02/remote-access-vpn-connection-using-an-asa/ -> Remote access VPN connection using ASA
+/tup/2010/05/02/site-to-site-vpn-tunnel-between-asa-and-cisco-router/ -> Site to site VPN tunnel between ASA and Router
+/tup/2010/05/02/site-to-site-vpn-tunnel-using-two-asas/ -> Site to site VPN between two ASAs
+/tup/2010/05/02/tips-on-troubleshooting-vpns-in-general/ -> Tips on troubleshooting VPN's in general
+/tup/2010/05/02/troubleshooting-tips-from-cisco-com/ -> Troubleshooting Tips from Cisco.com
+/tup/2010/05/02/webvpn-or-ssl-vpn-on-an-asa/ -> WebVPN or SSL VPN on an ASA
+/tup/2010/05/10/dynamicdhcp-vpn-tunnel-between-two-asas/ -> Dynamic/DHCP VPN tunnel between two Cisco ASA's
+/2010/05/10/dynamicdhcp-vpn-tunnel-between-two-asas -> Dynamic/DHCP VPN tunnel between two Cisco ASA's
+/tup/2010/05/23/site-to-site-vpn-configuration-script-between-pix-and-asa/ -> Site to Site VPN configuration script between PIX and ASA
+/2010/05/23/site-to-site-vpn-configuration-script-between-pix-and-asa -> Site to Site VPN configuration script between PIX and ASA
+/tup/2010/05/24/video-zen-of-vpn-concepts-on-how-vpns-work/ -> Video: Zen of VPN - Concepts on how VPN's work
+/tup/2010/06/10/l2l-tunnel-failed-at-mm_wait_msg4/ -> L2L Tunnel Failed at MM_WAIT_MSG4
+/2011/06/24/nat-for-cisco-asas-version-8-3/ -> NAT for Cisco ASA's version 8.3+
+/tup/2011/06/24/nat-for-cisco-asas-version-8-3/ -> NAT for Cisco ASA's version 8.3+
+/tup/2011/09/19/arduino-power-usage-project/ -> Arduino Power Usage Project
+/2011/09/19/arduino-power-usage-project -> Arduino Power Usage Project
+/tup/2011/10/19/learning-about-asp-tables-spi-and-vpn-contexts/ -> Learning about ASP tables, SPI and VPN contexts
+/tup/2011/11/26/using-just-a-cisco-asa-to-block-specific-websites/ -> Using just a Cisco ASA to block specific websites
+/tup/2012/05/25/vpn-tunnel-between-an-ubuntu-linux-machine-and-a-cisco-asa-firewall/ -> VPN tunnel between an Ubuntu Linux machine and a Cisco ASA firewall
+/tup/2012/07/06/cisco-asa-to-juniper-ssg-command-reference-cheat-sheet/ -> Cisco ASA to Juniper ScreenOS to Juniper JunOS Command Reference Cheat Sheet
+/tup/2012/07/06/site-to-site-vpn-tunnel-config-between-a-cisco-asa-and-a-juniper-ssg-screenos/ -> Site to Site VPN tunnel config between a Cisco ASA and a Juniper SSG ScreenOS
+/tup/2012/08/04/upgrade-a-cisco-pix-506e-to-run-7-1-pix-code/ -> Upgrade a Cisco PIX 506E to run 7.1 PIX code
+/2012/08/08/understanding-cisco-asa-anyconnect-licensing/ -> Understanding Cisco ASA AnyConnect Licensing
+/tup/2012/08/08/understanding-cisco-asa-anyconnect-licensing/ -> Understanding Cisco ASA AnyConnect Licensing
+/tup/2012/08/16/adding-an-ssl-certificate-on-an-asa/ -> Adding an SSL certificate on an ASA
+/2012/08/16/adding-an-ssl-certificate-on-an-asa -> Adding an SSL certificate on an ASA
+/2012/11/30/mx-record-problem-reverse-dns-does-not-match-smtp-banner/ -> MX Record problem: Reverse DNS does not match SMTP Banner
+/tup/2012/11/30/mx-record-problem-reverse-dns-does-not-match-smtp-banner/ -> MX Record problem: Reverse DNS does not match SMTP Banner
+/tup/2012/11/30/xbee-s2-quick-reference-guide-cheat-sheet/ -> XBee S2 Quick Reference Guide/Cheat Sheet and Video Tutorials to Getting Started
+/xbee-s2-quick-reference-guide-cheat-sheet/ -> XBee S2 Quick Reference Guide/Cheat Sheet and Video Tutorials to Getting Started
+/tup/2013/01/04/recovering-the-password-when-no-service-password-recovery-is-enabled-on-a-router/ -> Recovering the password when No Service Password-Recovery is enabled on a router
+/tup/2013/01/11/tcpdump-specify-interface-host-and-port/ -> TCPDump port, host, and interface
+/tup/2013/01/16/site-to-site-vpn-tunnel-between-cisco-asa-and-juniper-srx-junos/ -> Site to Site VPN Tunnel Between Cisco ASA and Juniper SRX JunOS
+/tup/2013/03/29/sublime-text-2-cisco-syntax-and-snippets/ -> Sublime Text 2 - Cisco Syntax and Snippets
+/tup/2013/03/31/cisco-vpn-troubleshooting-encaps-but-no-decaps/ -> Cisco VPN troubleshooting - encaps but no decaps
+/tup/2013/04/01/cisco-ips-turning-off-ssh-version-1/ -> Cisco IPS - Turning off ssh version 1
+/tup/2013/04/08/how-to-move-a-window-that-is-off-the-screen-into-view-in-windows-7/ -> How to move a window that is off the screen into view in Windows 7
+/tup/2013/04/30/initial-configuration-of-a-cisco-asa-and-ironport-wsa-using-wccp/ -> Initial configuration of a Cisco ASA and Ironport WSA using WCCP
+/tup/2013/05/02/arping-for-non-connected-subnets-on-a-cisco-asa/ -> ARPing for non-connected subnets on a Cisco ASA
+/tup/2013/05/02/providing-a-username-and-password-in-one-line-when-copying-a-ftp-file-to-a-cisco-asa-firewall/ -> Providing a username and password in one line when copying a FTP file to a Cisco ASA firewall
+/tup/2013/05/08/cisco-asa-botnet-license/ -> Cisco ASA Botnet License
+/tup/2013/05/08/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel/ -> Raspberry Pi: Phoning home using a reverse remote ssh tunnel
+/tup/2013/06/06/configure-ironport-to-act-as-a-smarthost/ -> Configure Ironport to act as a smarthost
+/tup/2013/06/06/continuous-ping/ -> How to do a Continuous Ping
+/tup/2013/06/06/default-password-cisco-firewall/ -> Default Password Cisco Firewall
+/tup/2013/06/11/how-to-release-subscriptions-on-a-cisco-ips/ -> MARS hard drive issues
+/tup/2013/06/06/packet-captures-on-cisco-asa/ -> Packet Captures on Cisco ASA
+/tup/2013/06/06/ssl-vpn-access-is-not-allowed/ -> SSL VPN access is not allowed
+/tup/2013/06/06/mars-hard-drive-issues/ -> How to Release Subscriptions on a Cisco IPS
+/tup/2013/06/11/restarting-the-analysisengine-on-a-cisco-ips/ -> Restarting the AnalysisEngine on a Cisco IPS
+/tup/2013/06/11/using-the-sharepoint-2013-wiki-api/ -> Using PHP and the Sharepoint 2013 Wiki API
+/tup/2013/06/15/cisco-asa-identity-firewall/ -> Cisco ASA Identity Firewall
+/tup/2013/06/15/how-to-ssh-like-a-pro/ -> How to SSH like a Pro
+/tup/2013/06/16/chromaterm/ -> Chromaterm
+/tup/2013/06/17/encrypt-passwords-on-cisco-router/ -> Encrypt Passwords on Cisco Router
+/tup/2013/06/17/how-to-do-a-password-recovery-on-a-cisco-asa-firewall/ -> How to do a password recovery on a Cisco ASA firewall
+/tup/2013/06/18/cisco-asa-order-of-operation/ -> Cisco ASA Order of Operation
+/tup/2013/06/18/how-an-asa-determines-what-interface-to-send-a-packet-out-of/ -> How an ASA determines what interface to send a packet out of
+/tup/2013/06/18/juniper-front-panel-led-color-meanings/ -> Juniper front panel LED color meanings
+/tup/2013/06/18/using-the-windows-command-line-like-a-pro/ -> Using the Windows Command line like a pro
+/tup/2013/07/01/cisco-asa-licensing-quick-reference-guide/ -> Cisco ASA Licensing Quick Reference Guide
+/tup/2013/07/01/configuring-ha-on-juniper-srx-through-junos/ -> Configuring HA on Juniper SRX through JunOS
+/tup/2013/07/01/configuring-nat-in-juniper-srx-platforms-using-junos/ -> Configuring NAT in Juniper SRX Platforms using JunOS
+/tup/2013/07/13/cisco-ios-vpn-error-peer-does-not-do-paranoid-keepalives/ -> Cisco IOS VPN error: peer does not do paranoid keepalives
+/tup/2013/07/13/installing-cisco-cx-asa/ -> Installing Cisco CX ASA
+/tup/2013/07/13/understanding-cisco-asa-connection-flags/ -> Understanding Cisco ASA Connection Flags
+/tup/2013/07/19/locating-the-cisco-anyconnect-profiles/ -> Locating the Cisco AnyConnect profiles
+/tup/2013/07/20/raspberry-pi-boots-into-emergency-kernel-when-loading-raspian/ -> Raspberry Pi boots into emergency kernel when loading raspian
+/tup/2013/07/29/understanding-cisco-asa-interface-counters-and-statistics/ -> Understanding Cisco ASA interface counters and statistics

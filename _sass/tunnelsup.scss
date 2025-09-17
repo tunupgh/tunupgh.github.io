@@ -1,0 +1,719 @@
+// TunnelsUP Custom Styles
+
+// Override the site header
+.site-header {
+  background: #414;
+  background: linear-gradient(#1F1F1F, #414, #525);
+  border-bottom: none;
+  min-height: 68px;
+  padding: 20px 0 0 0;
+}
+
+.tunnelsup-header {
+  text-align: left;
+}
+
+// TunnelsUP Logo Styling (from original)
+#title {
+  font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+  text-decoration: none;
+}
+
+#title_tunnel {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+}
+
+#title_up {
+  color: #000000;
+  line-height: 30px;
+  padding-left: 5px;
+  padding-right: 2px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin: 0px;
+  -moz-border-radius: 50px; /* or 50% */
+  border-radius: 50px; /* or 50% */
+  background-color: #00FF00;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#title_com {
+  color: #FFFFFF;
+}
+
+.site-title {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+// Green Navigation Bar
+.tunnelsup-nav {
+  background: #7EA629;
+  background: linear-gradient(#8FB735, #7EA629, #6D951A);
+  border-bottom: 1px solid #5C8015;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  li {
+    margin: 0;
+
+    a {
+      display: block;
+      padding: 12px 20px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 500;
+      border-right: 1px solid #6D951A;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255,255,255,0.1);
+        text-decoration: none;
+      }
+    }
+
+    &:last-child a {
+      border-right: none;
+    }
+  }
+}
+
+// Override the main page content to add proper spacing after navbar
+.page-content {
+  padding-top: 40px;
+}
+
+// Make sure wrapper maintains proper width
+.wrapper {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+// Special wider wrapper for home page and tools page to accommodate more boxes
+.post-content {
+  .home-sections {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .tools-grid {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
+
+// Articles list styling
+.article-list {
+  margin-top: 20px;
+}
+
+.article-item {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+  margin-bottom: 20px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #7EA629;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .article-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0 10px 0;
+  }
+
+  .article-excerpt {
+    color: #555;
+    line-height: 1.5;
+    margin: 10px 0 0 0;
+  }
+}
+
+// Cheat Sheets Grid Styling
+.cheatsheets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.cheatsheet-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex: 0 0 300px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #7EA629;
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    margin-top: 10px;
+  }
+}
+
+// Reference List Styling
+.reference-list {
+  margin: 20px 0;
+}
+
+.reference-item {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h3 {
+    margin: 0 0 5px 0;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #7EA629;
+      }
+    }
+  }
+
+  .reference-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0;
+  }
+}
+
+// Video List Styling
+.video-list {
+  margin: 20px 0;
+}
+
+.video-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3em;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #7EA629;
+      }
+    }
+  }
+
+  .video-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0 10px 0;
+  }
+
+  .video-excerpt {
+    color: #555;
+    line-height: 1.5;
+    margin: 10px 0 0 0;
+  }
+}
+
+// Home Page Styling
+.home-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.section-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex: 0 0 280px;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #7EA629;
+      }
+    }
+  }
+
+  .section-icon {
+    font-size: 60px;
+    margin: 20px auto 30px auto;
+    display: block;
+    height: 80px;
+    line-height: 80px;
+
+    &.articles-icon {
+      color: #008000;
+    }
+
+    &.tools-icon {
+      color: #0074cc;
+    }
+
+    &.cheatsheets-icon {
+      color: #dc143c;
+    }
+
+    &.videos-icon {
+      color: #8b008b;
+    }
+  }
+
+  p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.95em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+// Home Content (Recent & Featured Articles)
+.home-content {
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+
+  .recent-articles,
+  .featured-articles {
+    flex: 1;
+
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #7EA629;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li.post {
+        margin-bottom: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          color: #333;
+          text-decoration: none;
+          font-size: 0.95em;
+
+          &:hover {
+            color: #7EA629;
+          }
+        }
+      }
+    }
+
+    h4 {
+      margin-top: 20px;
+      margin-bottom: 0;
+
+      a {
+        color: #7EA629;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design for smaller screens
+@media (max-width: 768px) {
+  .home-sections {
+    flex-direction: column;
+    align-items: center;
+
+    .section-box {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  .home-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+// Tools Page Styling
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.tool-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex: 0 0 300px;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+
+  .tool-header {
+    text-align: center;
+    margin-bottom: auto;
+  }
+
+  h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.2em;
+
+    a {
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #7EA629;
+      }
+    }
+  }
+
+  .tool-icon {
+    font-size: 40px;
+    margin: 10px auto 15px auto;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+    font-size: 0.9em;
+    flex-grow: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+  }
+}
+
+.tools-articles {
+  margin: 50px 0 30px 0;
+
+  h2 {
+    color: #333;
+    border-bottom: 2px solid #7EA629;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+  }
+
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .tool-article {
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      h4 {
+        margin: 0 0 8px 0;
+        font-size: 1.1em;
+
+        a {
+          color: #333;
+          text-decoration: none;
+
+          &:hover {
+            color: #7EA629;
+          }
+        }
+      }
+
+      .article-meta {
+        color: #666;
+        font-size: 0.85em;
+        margin: 5px 0 10px 0;
+      }
+
+      .article-excerpt {
+        color: #555;
+        line-height: 1.5;
+        font-size: 0.9em;
+        margin: 10px 0 0 0;
+      }
+    }
+  }
+}
+
+// Tool Page Styling (individual tools)
+.tool-page {
+  .tool-header {
+    text-align: center;
+    margin-bottom: 30px;
+
+    .tool-title {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .tool-description {
+      color: #666;
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+  }
+
+  .tool-form {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0;
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .form-button {
+      background: #7EA629;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background: #6D951A;
+      }
+
+      &.secondary {
+        background: #6c757d;
+
+        &:hover {
+          background: #5a6268;
+        }
+      }
+    }
+
+    .error-message {
+      color: #dc3545;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  }
+
+  .tool-results {
+    margin: 30px 0;
+
+    .results-container {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 25px;
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        td {
+          padding: 8px 12px;
+          border-bottom: 1px solid #eee;
+
+          &:first-child {
+            font-weight: bold;
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+
+  .tool-examples {
+    margin: 40px 0;
+
+    h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+
+      td {
+        padding: 10px 15px;
+        border: 1px solid #dee2e6;
+        font-family: monospace;
+
+        &:first-child {
+          background: #f8f9fa;
+          font-weight: normal;
+        }
+
+        &:last-child {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Responsive design for tools
+@media (max-width: 768px) {
+  .tools-grid {
+    flex-direction: column;
+    align-items: center;
+
+    .tool-card {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  .tool-page .tool-form {
+    padding: 20px;
+  }
+}
+

@@ -1,0 +1,83 @@
+---
+layout: page
+title: Subnet Calculator
+permalink: /subnet-calculator/
+description: The most user-friendly IPv4/IPv6 subnet calculator.
+keywords: subnetting,subnet,calculator,ip,address,cidr,mask,netmask,host,network,converter,calculate,online,ipv4,study,practice,exercises,problems,ipv6,calc,reverse,calculation
+---
+
+<div class="tool-page">
+  <div class="tool-header">
+    <p class="tool-description">The most user-friendly IPv4/IPv6 subnet calculator. Calculate network addresses, broadcast, and host ranges.</p>
+  </div>
+
+  <div class="tool-form">
+    <form name="subnet" id="form">
+      <label for="ip-input">IP Address and Netmask:</label>
+      <input type="text" id="ip-input" placeholder="ex: 10.0.1.1/16" name="ip">
+      <div class="error-message errorMessage"></div>
+      <button id="calculate" class="form-button" type="button">Calculate</button>
+      <button id="random" class="form-button secondary" type="button">Random IP</button>
+    </form>
+  </div>
+
+  <div class="tool-results" id="resultsblock">
+    <div class="results-container">
+      <div id="results">
+        <table>
+          <tr><td><strong>IP Address:</strong></td><td></td></tr>
+          <tr><td><strong>Netmask:</strong></td><td></td></tr>
+          <tr><td><strong>Wildcard Mask:</strong></td><td></td></tr>
+          <tr><td><strong>CIDR Notation:</strong></td><td></td></tr>
+          <tr><td><strong>Network Address:</strong></td><td></td></tr>
+          <tr><td><strong>Usable Host Range:</strong></td><td></td></tr>
+          <tr><td><strong>Broadcast Address:</strong></td><td></td></tr>
+          <tr><td><strong>Binary Netmask:</strong></td><td></td></tr>
+          <tr><td><strong>Total number of hosts:</strong></td><td></td></tr>
+          <tr><td><strong>Number of usable hosts:</strong></td><td></td></tr>
+          <tr><td><strong>IP Class:</strong></td><td></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-examples">
+    <h3>Example IP Address Inputs</h3>
+    <h5>IPv4</h5>
+    <table>
+      <tr><td>172.31.180.150 <strong>255.255.252.0</strong></td><td>Subnet Mask</td></tr>
+      <tr><td>192.168.5.219<strong>/28</strong></td><td>CIDR Notation</td></tr>
+      <tr><td>172.16.50.45 <strong>0.0.15.255</strong></td><td>Wildcard Mask</td></tr>
+      <tr><td>10.40.50.60 <strong>#52</strong></td><td>Calculates a network with 52 hosts</td></tr>
+    </table>
+
+    <h5>IPv6</h5>
+    <table>
+      <tr><td>2001:0db8:85a3::8a2e:0370:7334<strong>/64</strong></td><td>Prefix Mask</td></tr>
+      <tr><td>2001:0db8:85a3::<strong>/48/64</strong></td><td>Subnet the /48 network into /64 networks</td></tr>
+    </table>
+  </div>
+
+  <h3>URL Parameters</h3>
+  <p>
+    It is possible to add the IP address to the URL to go directly to that IP and calculate it. Each of the following URLs will work:
+    <br><br>
+    <a href="/tools/subnet-calculator/?ip=192.168.1.1/24">/tools/subnet-calculator/?ip=192.168.1.1/24</a><br>
+    <a href="/tools/subnet-calculator/?ip=10.7.7.0%20255.255.255.0">/tools/subnet-calculator/?ip=10.7.7.0 255.255.255.0</a><br>
+    <a href="/tools/subnet-calculator/?ip=2001:0db8:85a3::8a2e:0370:7334/64">/tools/subnet-calculator/?ip=2001:0db8:85a3::8a2e:0370:7334/64</a>
+    <br><br>
+    This allows for using <a href="http://kb.mozillazine.org/Using_keyword_searches">keyword searches</a> in Firefox.
+    <br>
+    <a href="http://duckduckgo.com">Duckduckgo.com</a> users can enjoy the !subnet bang command which makes use of this tool. Try !subnet 192.168.1.1/24.
+  </p>
+
+  <h3>About this Subnet Calculator</h3>
+  <p>
+    This free online subnet calculator allows for the input of a netmask, a Cisco wildcard mask or /CIDR notation.<br>
+    The tool also has the ability to create a random IP address which can then be calculated. This is useful when studying and learning how to subnet and example practice networks are needed.<br>
+    This calculator can also be used to do reverse subnetting where the number of hosts is known but the netmask is not.<br>
+    Calculator is also IPv6 ready.
+  </p>
+</div>
+
+<script src="/assets/js/subnet.min.js"></script>

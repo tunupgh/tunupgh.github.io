@@ -1,0 +1,46 @@
+---
+layout: post
+title: SMTP error 451
+date: 2015-02-21 17:11
+comments: true
+categories:
+- smtp
+- mail
+- postfix
+- misc
+---
+SMTP error 451 will occur on a mail server when there is a local error to the mail server that is processing the message. This error may also be referenced as 4.5.1. The error code can either be visible from the mail logs on the mail server or in response to a message that generated the error.
+
+See this page for a full list of [SMTP error codes](/smtp-error-codes/).
+
+### Common reasons for this error
+
+* The recipient mail server is overwhelmed and was unable to accept the message. Try again later.
+* DNS error. Mail servers should verify they only receive mail from valid domains. Check SPF records of sending server. Verify sender domain resolve properly and is using a FQDN when initiating the EHLO handshake.
+* If recipient mail server is using LDAP for mailbox lookups it may be unable to contact the LDAP server.
+* Message has been blocked by anti-spam filter on receiving mail server.
+
+
+#### Error messages 
+
+Here are some common error messages seen when SMTP error code 451 shows up:
+
+```
+SMTP error 451 Unable to complete command, DNS not available or timed out
+```
+
+```
+451 Domain of sender address does not resolve
+```
+
+```
+451 Error getting LDAP results in map
+```
+
+```
+451 4.7.1 Greylisting in action, please come back in 00:02:00 [minutes]
+```
+
+```
+The message that you sent has been delayed. The reason given for the delay : 451 Temporary local problem - please try later.
+```

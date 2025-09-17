@@ -1,0 +1,88 @@
+---
+layout: page
+title: Hash Analyzer
+permalink: /hash-analyzer/
+description: A tool to determine the type of hash
+keywords: hash analyzer, md5, sha, sha256, sha2, blowfish, scrypt, bcrypt, identifier, analyzer, hash, identify, type, online
+---
+
+<div class="tool-page">
+  <div class="tool-header">
+    <p class="tool-description">Tool to identify hash types. Enter a hash to be identified.</p>
+  </div>
+
+  <div class="tool-form">
+    <form name="analyzer" id="form">
+      <input type="text" id="hash-input" placeholder="ex: 5f4dcc3b5aa765d61d8327deb882cf99" name="hash">
+      <div class="error-message" id="error-message"></div>
+      <button id="analyze" class="form-button" type="button">Analyze</button>
+    </form>
+  </div>
+
+  <div class="tool-results" id="results-block" style="display: none;">
+    <div class="results-container">
+      <div id="results">
+        <table>
+          <tr><td><strong>Hash type:</strong></td><td id="hash-type"></td></tr>
+          <tr><td><strong>Bit length:</strong></td><td id="bit-length"></td></tr>
+          <tr><td><strong>Base:</strong></td><td id="base"></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-examples">
+    <h3>Example Hash Inputs</h3>
+    <table>
+      <tr><td>5f4dcc3b5aa765d61d8327deb882cf99</td><td>MD5</td></tr>
+      <tr><td>5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8</td><td>SHA1</td></tr>
+      <tr><td>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</td><td>SHA256</td></tr>
+      <tr><td>$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy</td><td>BCRYPT</td></tr>
+      <tr><td>$1$Pl3m5Y95$t3Nk4zEXTCXDP4Vs4cL0p0</td><td>MD5-Crypt</td></tr>
+    </table>
+  </div>
+
+  <h3>Hash Formats</h3>
+  <p>
+    Hashes are usually use a hexadecimal or base64 charset.
+
+    If a hash has dollar signs "$" in it, this is usually a delimiter between the salt and the hash. Example:
+    <br>
+    <code>$1$Pl3m5Y95$t3Nk4zEXTCXDP4Vs4cL0p0</code>
+    <br>
+    In this case <code>Pl3m5Y95</code> is the salt and <code>t3Nk4zEXTCXDP4Vs4cL0p0</code> is the hash.
+  </p>
+
+  <h3>About the Hash Analyzer</h3>
+  <p>The aim of this online tool is to help identify a hash type. The tool can look at the characters that make up the hash to possibly identify which type of hash it is and what it may be used for.</p>
+
+  <p>Hash types this tool can positively identify:</p>
+  <ul>
+    <li>MD5</li>
+    <li>SHA1 (SHA128)</li>
+    <li>SHA2 (SHA256)</li>
+    <li>SHA512</li>
+    <li>MySQL</li>
+    <li>MD5 Wordpress</li>
+    <li>MD5 phpBB</li>
+    <li>BCRYPT</li>
+    <li>MD5-Crypt</li>
+    <li>Oracle</li>
+    <li>SHA-Crypt</li>
+    <li>PHPS</li>
+    <li>and more...</li>
+  </ul>
+
+  <h3>More Resources</h3>
+  <p>
+    There are more hash examples on the hashcat website located here:<br>
+    <a href="https://hashcat.net/wiki/doku.php?id=example_hashes">https://hashcat.net/wiki/doku.php?id=example_hashes</a>
+    <br><br>
+    If you need a bunch of sample hashes you can find a bunch at Kore Logic, click the "Download the password hash file bundle".<br>
+    <a href="http://contest-2012.korelogic.com/">http://contest-2012.korelogic.com/</a>
+    <br><br>
+    Here is an article on <a href="/getting-started-cracking-password-hashes/">how to crack hashes</a>.
+  </p>
+</div>
+
+<script src="/assets/js/hash.js"></script>
