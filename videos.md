@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Videos
-permalink: /videos/
+permalink: /video/
 ---
 
 <div class="video-list">

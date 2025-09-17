@@ -29,7 +29,7 @@ permalink: /tools/
     </div>
   </a>
 
-  <a href="/show-connections-analyzer/" class="tool-card-link">
+  <a href="/cisco-asa-show-connections-analyzer/" class="tool-card-link">
     <div class="tool-card">
       <h3>Show Connections Analyzer</h3>
       <div class="tool-icon">🔍</div>
